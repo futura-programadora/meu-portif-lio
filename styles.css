@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Fundo branco */
+    color: #333; /* Texto preto */
+}
+
+header {
+    background-color: #4a2c2a; /* Marrom escuro */
+    color: white;
+    padding: 1rem 0;
+}
+a {
+    text-decoration: none;
+    color: #4a2c2a;
+}
+
+a:hover {
+    color: gray;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+section#sobre-mim {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5; /* Cinza claro */
+}
+
+section#sobre-mim .foto {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+section#projetos, section#desenvolvimento-profissional, section#cursos, section#contato {
+    background-color: #eaeaea;
+    font-family: Arial, Helvetica, sans-serif; /* Cinza claro */
+}
+
+section h1 {
+    text-align: center;
+    color: #4a2c2a; /* Marrom escuro */
+}
+
+.projeto {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.projeto:hover {
+    transform: translate(-3px, -3px);
+    border: 1px solid black;
+    transition: 0.3s;
+}
+.projeto:active {
+    transform: translate(2px, 2px);
+}
+footer {
+    background-color: #4a2c2a; /* Marrom escuro */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer .contato-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 50px;
+}
+
+footer .contato-links a {
+    margin: 0 10px;
+}
+
+footer .contato-links img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}

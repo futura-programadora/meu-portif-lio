@@ -1,0 +1,30 @@
+body {
+    background:rgb(201, 148, 254);/*corpo/fundo*/
+    font: normal 18pt arial;
+}
+
+header {
+    color: rgb(255, 255, 255);/*titulo*/
+    text-align: center;
+}
+
+section {
+    background: rgb(247, 246, 246);/*testando e Ola!*/
+    border-radius: 10px;/*arredondar as bordas*/
+    padding: 15px;/*espaço entre a palavra e a parte inferior e superior*/
+    width: 500px;/*linha*/
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.395);/*sombra*/
+    font: normal 16pt arial;
+}
+
+div {
+    /*text-align: center; /*centralizar a div*/
+    padding: 8px;/*distancia entre as divs*/
+}
+
+footer {
+    color: rgb(255, 255, 255);/*marca d´gua*/
+    text-align: center;
+    font-style: italic;
+}
