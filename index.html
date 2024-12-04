@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,13 +6,53 @@
     <title>Meu Portfólio</title>
     <link rel="shortcut icon" href="./imagens/curriculo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding-top: 60px;
+            background-color: #1d1f27; /* Fundo escuro */
+            color: #ecf0f1; /* Texto claro */
+            position: relative; /* Para posicionar as bolinhas em relação ao body */
+        }
+
+        /* Bubbles Styles */
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* Permite interações com elementos acima */
+            z-index: -1; /* Mantém atrás do conteúdo */
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 100, 200, 0.7) 0%, rgba(200, 100, 200, 0.3) 60%, rgba(200, 100, 200, 0) 100%); /* Gradiente radial */
+            box-shadow: 0 0 20px rgba(200, 100, 200, 0.8); /* Efeito de brilho */
+            animation: bubbleMovement 10s linear infinite; /* Animação das bolinhas */
+        }
+
+        @keyframes bubbleMovement {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(calc(100vw - 50px), calc(100vh - 50px)); /* Mova para a esquina oposta */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
                 <button class="nav-toggle">☰</button>
-                <ul>
+                <ul class="nav-menu">
                     <li><a href="#sobre-mim">Sobre Mim</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#desenvolvimento-profissional">Desenvolvimento Profissional</a></li>
@@ -24,85 +63,117 @@
         </nav>
     </header>
 
-    <section id="sobre-mim">
-        <img src="./imagens/minha foto.jpeg" alt="Minha Foto" class="foto">
-        <div class="descricao">
-            <h1>Sobre Mim</h1>
-            <p>Olá, meu nome é Daniela de Mello Oliveira, seja muito bem vindo ao meu Portifólio.</p>
-            <p>Eu no momento estou focando muito em cursos para o meu desenvolvimento profissional na área de dev full-stack e como desenvolvedora e analista de sistemas, estou nessa área a um ano e meio mais ou menos e fiz vários projetinhos de estudo, e de treinamento.</p>
-        </div>
-    </section>
+    <div class="bubbles"></div>
 
-    <section id="projetos">
-        <h1>Projetos</h1>
-        <a href="https://futura-programadora.github.io/projeto-android-t2/" target="_blank">
-            <div class="projeto">
-                <h2>Projeto Site Android</h2>
-                <p>Um projeto feito durante o meu curso de HTML e CSS, montada em formato de site para treinamento.</p>
+    <main>
+        <section id="sobre-mim" class="section">
+            <img src="./imagens/minha_foto.jpeg" alt="Minha Foto" class="foto">
+            <div class="descricao">
+                <h1>Sobre Mim</h1>
+                <p>Olá, meu nome é Daniela de Mello Oliveira, seja muito bem-vindo ao meu Portfólio.</p>
+                <p>Eu no momento estou focando muito em cursos para o meu desenvolvimento profissional na área de dev full-stack e como desenvolvedora e analista de sistemas. Estou nessa área há um ano e meio mais ou menos e fiz vários projetos de estudo e treinamento.</p>
             </div>
-        </a>
-        <a href="./projetos/cordel-moderno/index.html">
-            <div class="projeto">
-                <h2>Projeto Cordel Moderno</h2>
-                <p>feito durante o curso de HTML e CSS, montado em formato de site para treinamento.</p>
-            </div>
-        </a>
-        <a href="./projetos/projeto-tabuada/ex0018 tabuada.html">
-            <div class="projeto">
-                <h2>Projeto Tabuada</h2>
-                <p>montagem simples de uma tabuada funcional para qualquer número.</p>
-            </div>
-        </a>
-        <a href=" https://futura-programadora.github.io/projeto-social/" target="_blank">
-            <div class="projeto">
-                <h2>Projeto Social</h2>
-                <p>montagem de uma página feita para divugar as redes sociais, usei o exemplo das redes sociais do meu professor.</p>
-            </div>
-        </a>
-        <a href="https://futura-programadora.github.io/ChemLab/" target="_blank">
-            <div class="projeto">
-                <h2>projeto ChemLab</h2>
-                <p>Esse projeto ainda esta passando por melhorias, testes e está em desenvolvimento, esse projeto será uma plataforma que será usada na minha escola para ajudar alunos do ensino médio no aprendizado.</p>
-            </div>
-        </a>
-    </section>
+        </section>
 
-    <section id="desenvolvimento-profissional">
-        <h1>Desenvolvimento Profissional</h1>
-        <p>Eu comecei no curso de informática básica onde aprendi muitos conceitos sobre Hardware e software, Sistemas operacionais, processamento de texto, Planilhas Eletrônicas, apresentações, Bases da internet, Comunicação digital, Segurança básica, Redes de computadores, manutenção básica de computadores, Armazenamento de dados e ética e privacidade, finalizando esse curso eu fiz digitação básica, e depois passei para a área da programação e comecei a estudar de casa através de cursos online de HTML, CSS e JavaScript/PHP, ainda permaneço estudando por conta que é um conteúdo muito extenso e que está sempre sendo atualizado.</p>
-        <p>Atualmente estou me desenvolvendo como dev full stack e já produzi alguns projetos durante os cursos, também estou cursando técnico em desenvolvimento e analise de sistemas, e cursando virtualmente.</p>
-    </section>
+        <section id="projetos" class="section">
+            <h1>Projetos</h1>
+            <div class="projetos-container">
+                <a href="https://futura-programadora.github.io/projeto-android-t2/" target="_blank" class="projeto-link">
+                    <div class="projeto">
+                        <h2>Projeto Site Android</h2>
+                        <p>Um projeto feito durante o meu curso de HTML e CSS, montado em formato de site para treinamento.</p>
+                    </div>
+                </a>
+                <a href="./projetos/cordel-moderno/index.html" class="projeto-link">
+                    <div class="projeto">
+                        <h2>Projeto Cordel Moderno</h2>
+                        <p>Feito durante o curso de HTML e CSS, montado em formato de site para treinamento.</p>
+                    </div>
+                </a>
+                <a href="./projetos/projeto-tabuada/ex0018 tabuada.html" class="projeto-link">
+                    <div class="projeto">
+                        <h2>Projeto Tabuada</h2>
+                        <p>Montagem simples de uma tabuada funcional para qualquer número.</p>
+                    </div>
+                </a>
+                <a href="https://futura-programadora.github.io/projeto-social/" target="_blank" class="projeto-link">
+                    <div class="projeto">
+                        <h2>Projeto Social</h2>
+                        <p>Montagem de uma página feita para divulgar as redes sociais, usei o exemplo das redes sociais do meu professor.</p>
+                    </div>
+                </a>
+                <a href="https://futura-programadora.github.io/ChemLab/" target="_blank" class="projeto-link">
+                    <div class="projeto">
+                        <h2>Projeto ChemLab</h2>
+                        <p>Esse projeto ainda está passando por melhorias, testes e está em desenvolvimento. Será uma plataforma usada na minha escola para ajudar alunos do ensino médio no aprendizado.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    <section id="cursos">
-        <h1>Cursos</h1>
-        <ul>
-            <li>Curso de esteticista - cursei um ano como esteticista cuidando da beleza de mulheres em várias áreas. </li><br>
-            <li>Curso de informática básica - cursei informática básica entre 2019 e 2021.</li><br>
-            <li>Curso de Digitação básica - cursei entre 2018 e 2020. </li><br>
-            <li>Cursando Desenvolvimento e analise de sistemas - comecei em 2024 e irei finalizar em 2025, nesse curso inclui vários cursos como, lógica e linguagem de programação, redes, versionamento de códigos, processos, carreira e IA (Inteligência artificial.)</li>
-            <!-- Adicione mais cursos conforme necessário -->
-        </ul>
-    </section>
+        <section id="desenvolvimento-profissional" class="section">
+            <h1>Desenvolvimento Profissional</h1>
+            <p>Eu comecei no curso de informática básica onde aprendi muitos conceitos sobre Hardware e software, Sistemas operacionais, processamento de texto, Planilhas Eletrônicas, apresentações, Bases da internet, Comunicação digital, Segurança básica, Redes de computadores, manutenção básica de computadores, Armazenamento de dados e ética e privacidade. Finalizando esse curso, fiz digitação básica e depois passei para a área da programação, começando a estudar de casa através de cursos online de HTML, CSS e JavaScript/PHP. Ainda permaneço estudando, pois é um conteúdo muito extenso e que está sempre sendo atualizado.</p>
+            <p>Atualmente estou me desenvolvendo como dev full-stack e já produzi alguns projetos durante os cursos. Também estou cursando técnico em desenvolvimento e análise de sistemas de forma virtual.</p>
+        </section>
 
-    <section id="contato">
-        <h1>Entre em Contato comigo</h1>
-        <p><strong>Email:</strong> danimelloliv@gmail.com</p>
-        <p><strong>Telefone:</strong> +55 (11) 95118-2656</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/daniela-de-mello-oliveira-18373330b/" target="_blank">Meu <strong>LinkedIn</strong></a></p>
-        <p><strong>Github:</strong> <a href="">Meu <strong>Github</strong>, conheça todos os meu projetos.</a></p>
-        <!-- Adicione mais informações de contato conforme necessário -->
-    </section>
+        <section id="cursos" class="section">
+            <h1>Cursos</h1>
+            <ul>
+                <li>Curso de esteticista - Cursei um ano como esteticista cuidando da beleza de mulheres em várias áreas.</li>
+                <li>Curso de informática básica - Cursei informática básica entre 2019 e 2021.</li>
+                <li>Curso de Digitação básica - Cursei entre 2018 e 2020.</li>
+                <li>Cursando Desenvolvimento e análise de sistemas - Comecei em 2024 e finalizarei em 2025. Neste curso, incluo vários módulos como lógica e linguagem de programação, redes, versionamento de códigos, processos, carreira e IA (Inteligência artificial).</li>
+                <!-- Adicione mais cursos conforme necessário -->
+            </ul>
+        </section>
+
+        <section id="contato" class="section">
+            <h1>Entre em Contato comigo</h1>
+            <p><strong>Email:</strong> danimelloliv@gmail.com</p>
+            <p><strong>Telefone:</strong> +55 (11) 95118-2656</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/daniela-de-mello-oliveira-18373330b/" target="_blank">Meu LinkedIn</a></p>
+            <p><strong>Github:</strong> <a href="https://github.com/futura-programadora?tab=repositories" target="_blank">Meu Github</a></p>
+            <!-- Adicione mais informações de contato conforme necessário -->
+        </section>
+    </main>
 
     <footer>
         <div class="contato-links">
             <a href="https://www.linkedin.com/in/daniela-de-mello-oliveira-18373330b/" target="_blank"><img src="./imagens/linkedin.png" alt="LinkedIn"></a>
-
             <a href="mailto:danimelloliv@gmail.com"><img src="./imagens/o-email.png" alt="Email"></a>
-
             <a href="https://github.com/futura-programadora?tab=repositories" target="_blank"><img src="./imagens/github.png" alt="GitHub"></a>
         </div>
         <p>&copy; 2024 Daniela de Mello Oliveira. Todos os direitos reservados.</p>
     </footer>
+
     <script src="script.js"></script>
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        const bubblesContainer = document.querySelector('.bubbles');
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 30 + 20; // Tamanho aleatório entre 20 e 50px
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${Math.random() * window.innerWidth}px`; // Posição horizontal aleatória
+            bubble.style.top = `${Math.random() * window.innerHeight}px`; // Posição vertical aleatória
+            bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duração aleatória entre 5s e 10s
+            bubblesContainer.appendChild(bubble);
+
+            // Remove a bolinha após a animação
+            bubble.addEventListener('animationend', () => {
+                bubble.remove();
+            });
+        }
+
+        // Cria bolinhas em intervalos regulares
+        setInterval(createBubble, 3000); // Adiciona uma bolinha a cada 3 segundos
+    </script>
 </body>
 </html>
