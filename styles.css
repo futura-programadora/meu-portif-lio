@@ -1,42 +1,35 @@
-/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding-top: 60px;
-    background-color: #1d1f27; /* Fundo escuro */
-    color: #ecf0f1; /* Texto claro */
-    position: relative; /* Para posicionar as bolinhas em relação ao body */
+    background-color: #6A1B9A; /* Fundo roxo profundo */
+    color: #ECF0F1; /* Texto claro */
 }
 
 h1, h2 {
-    color: #8e24aa; /* Roxo */
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+    color: #AB47BC; /* Roxo claro */
 }
 
 a {
-    color: #ab47bc; /* Roxo claro */
+    color: #AB47BC; /* Roxo claro */
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 a:hover {
-    color: #d1c4e9; /* Roxo muito claro */
+    color: #E1BEE7; /* Roxo muito claro */
+    text-decoration: underline;
 }
 
-/* Section Styles */
 .section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    line-height: 1.6;
-    position: relative;
-    z-index: 1; /* Para sobrepor ao efeito de fundo */
+    padding: 60px 20px;
+    background-color: #1d1f27; /* Fundo escuro para seções */
+    margin: 20px 0;
 }
 
 .projetos-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
 }
 
@@ -45,13 +38,11 @@ a:hover {
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s;
-    flex: 1 1 calc(33.333% - 20px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .projeto:hover {
     transform: scale(1.05);
-    background-color: #383b45; /* Escurece ao passar o mouse */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation Styles */
@@ -158,9 +149,9 @@ nav:hover {
 }
 
 #sobre-mim .foto {
-    border-radius: 50%;
+    border-radius: 10px;
     width: 120px; /* Tamanho da imagem */
-    height: 120px;
+    height: 200px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
